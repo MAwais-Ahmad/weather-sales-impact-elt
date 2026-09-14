@@ -27,12 +27,16 @@ def main():
     print("\n[STEP 3/4] Running dbt Analytical Transformation Models...")
     # Try PostgreSQL target first, fallback to duckdb_fallback if PostgreSQL service is offline
     try:
-        dbt_cmd = ["dbt", "run", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR]
+        dbt_cmd = [sys.executable, "-m", "dbt.cli.main", "run", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR]
         subprocess.run(dbt_cmd, check=True)
-    except subprocess.CalledProcessError:
+    except Exception:
         print("\nPostgreSQL execution failed/offline. Falling back to DuckDB target...")
-        dbt_cmd = ["dbt", "run", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR, "-t", "duckdb_fallback"]
-        subprocess.run(dbt_cmd, check=True)
+        dbt_cmd = [sys.executable, "-m", "dbt.cli.main", "run", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR, "-t", "duckdb_fallback"]
+        try:
+            subprocess.run(dbt_cmd, check=True)
+        except Exception:
+            dbt_cmd_alt = [sys.executable, "-m", "dbt", "run", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR, "-t", "duckdb_fallback"]
+            subprocess.run(dbt_cmd_alt, check=True)
     
     # 4. Warehouse Audits & Executive Summary Matrix
     print("\n[STEP 4/4] Verifying Project 2 Analytics Warehouse & Data Marts...")

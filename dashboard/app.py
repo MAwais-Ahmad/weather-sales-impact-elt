@@ -36,8 +36,9 @@ def load_project2_data():
     except Exception:
         if not os.path.exists(DB_PATH):
             with st.spinner("⏳ First-time cloud setup: Ingesting multi-source API data & running dbt pipeline..."):
+                import sys
                 import subprocess
-                subprocess.run(["python", os.path.join(BASE_DIR, "run_pipeline.py")], check=True)
+                subprocess.run([sys.executable, os.path.join(BASE_DIR, "run_pipeline.py")], check=True)
 
         if not os.path.exists(DB_PATH):
             return None, None, None, "None"
