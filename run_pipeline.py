@@ -11,6 +11,7 @@ DOWNLOAD_SCRIPT = os.path.join(DATA_DIR, "download_raw_data.py")
 FALLBACK_DUCKDB = os.path.join(DATA_DIR, "data_warehouse_project2.duckdb")
 
 def main():
+    os.environ["DUCKDB_PATH"] = FALLBACK_DUCKDB
     print("=" * 75)
     print("  PROJECT 2: MULTI-SOURCE EXTERNAL FACTORS (SALES + WEATHER API) PIPELINE ")
     print("=" * 75)

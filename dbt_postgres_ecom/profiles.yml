@@ -12,5 +12,5 @@ dbt_postgres_ecom:
       threads: 4
     duckdb_fallback:
       type: duckdb
-      path: 'd:/Projects/project_2_elt/data/data_warehouse_project2.duckdb'
+      path: "{{ env_var('DUCKDB_PATH', '../data/data_warehouse_project2.duckdb') }}"
       schema: main
