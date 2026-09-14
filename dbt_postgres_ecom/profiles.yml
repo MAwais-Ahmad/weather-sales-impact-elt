@@ -1,0 +1,16 @@
+dbt_postgres_ecom:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      user: "{{ env_var('POSTGRES_USER', 'postgres') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'postgres') }}"
+      port: 5432
+      dbname: "{{ env_var('POSTGRES_DB', 'ecom_external_dw') }}"
+      schema: main
+      threads: 4
+    duckdb_fallback:
+      type: duckdb
+      path: 'd:/Projects/project_2_elt/data/data_warehouse_project2.duckdb'
+      schema: main

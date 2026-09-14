@@ -1,0 +1,14 @@
+dlt[duckdb,postgres]
+dbt-postgres
+dbt-duckdb
+dagster
+dagster-dbt
+dagster-webserver
+pandas
+pydantic
+requests
+pyarrow
+openpyxl
+plotly
+streamlit
+psycopg2-binary

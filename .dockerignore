@@ -1,0 +1,9 @@
+data/*.duckdb
+data/*.csv
+.dlt/
+target/
+dbt_packages/
+__pycache__/
+*.pyc
+.git
+.gitignore
