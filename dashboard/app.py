@@ -35,13 +35,19 @@ def load_project2_data():
         return fct_sales, mart_impact, mart_takeaway, "PostgreSQL Database"
     except Exception:
         if not os.path.exists(DB_PATH):
+            with st.spinner("⏳ First-time cloud setup: Ingesting multi-source API data & running dbt pipeline..."):
+                import subprocess
+                subprocess.run(["python", os.path.join(BASE_DIR, "run_pipeline.py")], check=True)
+
+        if not os.path.exists(DB_PATH):
             return None, None, None, "None"
+            
         con = duckdb.connect(DB_PATH, read_only=True)
         fct_sales = con.execute("SELECT * FROM fct_daily_sales_external").df()
         mart_impact = con.execute("SELECT * FROM mart_weather_category_impact").df()
         mart_takeaway = con.execute("SELECT * FROM mart_executive_takeaway").df()
         con.close()
-        return fct_sales, mart_impact, mart_takeaway, "DuckDB Warehouse (Local)"
+        return fct_sales, mart_impact, mart_takeaway, "DuckDB Warehouse (Cloud)"
 
 st.title("🌦️ External Weather & Sales Impact Analytics")
 st.caption("Multi-Source Ingestion (Sales Transactions + Open-Meteo REST API) | PostgreSQL / dbt Data Marts")
