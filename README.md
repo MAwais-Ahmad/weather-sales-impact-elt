@@ -1,4 +1,10 @@
-# 🌦️ E-Commerce External Factors & Weather Impact Pipeline (Multi-Source ELT)
+# 🌦️ External Weather & Sales Impact Pipeline (Multi-Source ELT)
+
+[![Live Streamlit Demo](https://img.shields.io/badge/Live%20Dashboard-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://weather-sales-impact.streamlit.app)
+[![dbt Engine](https://img.shields.io/badge/dbt-PostgreSQL%2FDuckDB-FF694B?style=for-the-badge&logo=dbt&logoColor=white)](https://www.getdbt.com/)
+[![Dagster](https://img.shields.io/badge/Orchestration-Dagster-4F46E5?style=for-the-badge&logo=dagster&logoColor=white)](https://dagster.io/)
+
+> 🚀 **Live Interactive Web App**: [https://weather-sales-impact.streamlit.app](https://weather-sales-impact.streamlit.app)
 
 An enterprise-grade multi-source Data Engineering pipeline and executive analytics dashboard built on the **Modern Data Stack** (`dlt`, `PostgreSQL`, `DuckDB`, `dbt`, `Dagster`, `Streamlit`, `Docker`).
 
