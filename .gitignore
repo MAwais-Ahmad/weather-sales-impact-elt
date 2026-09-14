@@ -17,3 +17,6 @@ dbt_postgres_ecom/logs/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Internal roadmap files
+future_tasks.md
