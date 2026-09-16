@@ -4,13 +4,31 @@
 [![dbt Engine](https://img.shields.io/badge/dbt-PostgreSQL%2FDuckDB-FF694B?style=for-the-badge&logo=dbt&logoColor=white)](https://www.getdbt.com/)
 [![Dagster](https://img.shields.io/badge/Orchestration-Dagster-4F46E5?style=for-the-badge&logo=dagster&logoColor=white)](https://dagster.io/)
 
-> 🚀 **Live Interactive Web App**: [https://weather-sales-impact.streamlit.app](https://weather-sales-impact.streamlit.app)
+> 🚀 **Live Interactive Web App**: [https://weather-sales-impact.streamlit.app](https://weather-sales-impact.streamlit.app)  
+> ⏱️ **Note on Free-Tier Hosting**: *Hosted on Streamlit Community Cloud (Free Tier). If the container has been idle, it may take ~45–60 seconds to spin up on first click. For immediate review without waiting, high-resolution preview screenshots are provided below.*
 
 An enterprise-grade multi-source Data Engineering pipeline and executive analytics dashboard built on the **Modern Data Stack** (`dlt`, `PostgreSQL`, `DuckDB`, `dbt`, `Dagster`, `Streamlit`, `Docker`).
 
 Processes historical e-commerce sales transactions (~540,000 order records) merged with live/historical daily weather data from the **Open-Meteo REST API** to determine how weather patterns impact product category sales.
 
 ---
+
+## 📸 Executive Dashboard Previews
+
+![Executive Weather Analytics Dashboard Overview](docs/images/weather_dashboard_overview.png)
+*Fig 1: Executive KPI suite ($10.67M Revenue, +2.8% Rainy Lift, +82.4% Top Sensitivity) and automated plain-English insight engine.*
+
+<details>
+<summary>📊 <b>Click to view Dual-Axis Trend & Category Breakdown Charts</b></summary>
+<br>
+
+![Dual-Axis Weather & Sales Overlay Chart](docs/images/weather_dashboard_charts.png)
+*Fig 2: Dual-axis daily sales revenue vs. temperature overlay trend & category revenue distribution across weather conditions.*
+
+![Full Dashboard View](docs/images/weather_dashboard_full.png)
+*Fig 3: Complete scroll view of analytics dashboard.*
+
+</details>
 
 ## 🎯 Key Features & Insights
 
